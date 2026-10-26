@@ -32,18 +32,58 @@
 
 ## 安装
 
-把整个目录放进你所使用 Agent 的技能目录，例如：
+### 方式一：让 Agent 自己装（推荐）
+
+不需要手动敲命令。把下面这句话发给你的 Agent —— DSH、Codex、Claude Code 都行：
 
 ```text
-~/.dsh/skills/lab-weekly-report/
+请把 https://github.com/chameleonn4/lab-weekly-report-skill 安装成技能：
+克隆到你的技能目录，目录名用 lab-weekly-report，装完确认 SKILL.md 和 references/ 都在，然后告诉我它出现在技能列表里了。
 ```
 
-目录名不必与技能名一致，但需要保留 `SKILL.md` 与 `references/` 的相对位置。
+Agent 会自己选对路径、克隆、检查结构。装完新开一个对话，问一句「你现在有哪些技能」，能看到 `lab-weekly-report` 就成功了。
+
+已经装过、想升级时，同样交给 Agent：
+
+```text
+请更新技能 lab-weekly-report：在它的目录里 git pull，然后确认 SKILL.md 还是最新版本。
+```
+
+### 方式二：手动克隆
+
+Agent 的技能目录约定如下，把仓库克隆进去，目录名用 `lab-weekly-report`：
+
+| Agent | 技能目录 |
+| --- | --- |
+| DSH | `~/.dsh/skills/lab-weekly-report/` |
+| Codex | `~/.codex/skills/lab-weekly-report/` |
+| Claude Code | `~/.claude/skills/lab-weekly-report/` |
+
+```bash
+git clone https://github.com/chameleonn4/lab-weekly-report-skill.git ~/.dsh/skills/lab-weekly-report
+```
+
+Windows PowerShell：
+
+```powershell
+git clone https://github.com/chameleonn4/lab-weekly-report-skill.git "$env:USERPROFILE\.dsh\skills\lab-weekly-report"
+```
+
+只认目录结构，不认仓库名：只要目标目录里有 `SKILL.md`，且 `references/` 与它保持相对位置即可。
 
 ## 使用
 
-在对话里直接说「用 lab-weekly-report 写周报」，或让 Agent 在检测到写周报的需求时自动调用。技能会先和你确认作者、时间范围、项目范围，再列候选工作项逐条核对，最后才生成文件。
+装好之后有两种触发方式：
+
+- 直接说「用 lab-weekly-report 写周报」。
+- 或者只说「帮我写这周的周报」，支持隐式调用的宿主会自动加载它。
+
+技能会先确认作者、时间范围和项目范围，再列候选工作项让你逐条核对状态与证据，确认后才生成 Markdown 和 PDF。所以第一次跑之前，最好准备好：这段时间的聊天记录（或让它自己检索）、甘特图、以及 PDF 想存到哪个目录。
 
 ## 适用范围
 
 技能里的示例工具名（如 Codex 的会话读取接口）需要按宿主替换；若宿主无法读取聊天记录，技能会明确说明历史回顾不完整，而不是假装查过。
+
+## License
+
+[MIT](LICENSE) © 2026 chameleonn4
