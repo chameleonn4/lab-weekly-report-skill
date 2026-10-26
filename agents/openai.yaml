@@ -1,0 +1,6 @@
+interface:
+  display_name: "Lab Weekly Report"
+  short_description: "Verify weekly lab work and create matching Markdown and PDF reports"
+  default_prompt: "Use $lab-weekly-report to review my agent chat history and Gantt chart, then prepare my Markdown and PDF weekly reports."
+policy:
+  allow_implicit_invocation: true
