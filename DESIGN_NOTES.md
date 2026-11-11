@@ -25,3 +25,15 @@ The left `实验室工作周报` label duplicated the right-side report identity
 ## Why author confirmation remains mandatory
 
 History, commits, files, and Gantt schedule markers help discover work but do not prove intent, completion, or reportability. Candidate review and explicit status confirmation prevent unsupported claims and allow the author to add work outside accessible agents.
+
+## Why learning reflections are reviewed separately
+
+The author wants to explain what they learned through the work, rather than only list actions. The agent proposes a short first-person reflection from confirmed facts, then revises it until the author approves. Completed work does not prove personal understanding or mastery; the author may also confirm that a reflection should be omitted.
+
+## Why natural writing has its own reference
+
+The writing guidance adapts the supplied humanizer-zh principles to supervisor-facing reports: ordinary verbs, concrete details, varied sentence rhythm, and fewer formulaic claims. It preserves required fields, evidence, and uncertainty instead of adding invented personality or emotion.
+
+## Why images are optional and selected per item
+
+The agent recommends a picture when it improves understanding, then offers AI generation, an author-provided image, or no image. Selected images sit below the related item in both outputs and are retained beside the Markdown. Generated illustrations must not suggest invented measurements or results; captions and placements are reviewed with the full draft.
