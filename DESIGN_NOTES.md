@@ -4,23 +4,23 @@ These notes explain the skill's design for the person learning to write skills. 
 
 ## Why the report is more detailed but still compact
 
-The revised report increases information density through controlled fields rather than longer prose. Completed and Gantt items use `目标 / 具体动作 / 结果 / 证据`; failed work uses `尝试 / 原因或卡点 / 当前结论 / 下一步`; plans use `目标 / 准备做的动作 / 预期结果` and add risk only when confirmed. Each field starts on a separate line in its own paragraph in both Markdown and PDF. One or two pages is a preference, not a ceiling: add pages rather than joining fields or shrinking text.
+The report increases information density through controlled fields rather than longer prose. Completed and Gantt items use `目标 / 具体动作 / 结果 / 证据`; failed work uses `尝试 / 原因或卡点 / 当前结论 / 下一步`; plans use `目标 / 准备做的动作 / 预期结果` and add risk only when confirmed. Each field is its own visible block in HTML. Add slides rather than joining fields or shrinking text.
 
 ## Why items are split selectively
 
 The skill splits independent objectives, outputs, or clearly different methods/experiments, then merges routine steps under the same objective. This exposes meaningful work without manufacturing workload from tool calls, dates, or chat fragments.
 
-## Why Markdown is the source of truth
+## Why the approved draft is the source of truth
 
-The user wants an editable Markdown record and a visually readable PDF. Locking the approved Markdown before conversion keeps both files aligned and prevents PDF formatting work from silently rewriting the report.
+The user wants one self-contained HTML deliverable. The complete wording is reviewed and approved in chat before layout; locking that approved draft prevents presentation formatting from silently rewriting the report.
 
-## Why PDF conversion is separate
+## Why the report is self-contained HTML
 
-Different agents expose different local renderers. A temporary HTML or Word file can be used when it improves Chinese rendering, but it is only an implementation artifact. The skill delivers only the Markdown and PDF and reports a limitation instead of claiming a missing PDF.
+The user approved the ACE deck's graphite-and-red 16:10 presentation style for reports. Inline assets and code keep the HTML portable and usable offline without a folder of linked images or conversion sidecars.
 
-## Why the header changed
+## Why presentation layout uses slides
 
-The left `实验室工作周报` label duplicated the right-side report identity. It was removed while preserving the right-aligned lab/author line, Gantt week label, and centered page numbering.
+The approved example uses a fixed presentation canvas, section navigation, progress, slide count, keyboard controls, and fullscreen. Long report fields continue onto titled slides so the format does not force missing content or tiny type.
 
 ## Why author confirmation remains mandatory
 
@@ -36,4 +36,4 @@ The writing guidance adapts the supplied humanizer-zh principles to supervisor-f
 
 ## Why images are optional and selected per item
 
-The agent recommends a picture when it improves understanding, then offers AI generation, an author-provided image, or no image. Selected images sit below the related item in both outputs and are retained beside the Markdown. Generated illustrations must not suggest invented measurements or results; captions and placements are reviewed with the full draft.
+The agent recommends a picture when it improves understanding, then offers AI generation, an author-provided image, or no image. Selected images sit below the related item and are embedded in the HTML. Generated illustrations must not suggest invented measurements or results; captions and placements are reviewed with the full draft.
